@@ -1,12 +1,13 @@
 <?php
-/*
-Plugin Name: Network Username Restrictions Override
-Version: 1.2
-Plugin URI: http://danieltwc.com/2011/network-username-restrictions-override-1-0/
-Description: Override some of the built-in restrictions in WordPress network usernames. Similar to the <a href="http://wordpress.org/extend/plugins/wpmu-blog-name-restrictions-override/">Blog Name Restrictions Override</a> plugin.
-Author: Daniel Westermann-Clark
-Author URI: http://danieltwc.com/
-*/
+/**
+ * Plugin Name: Network Username Restrictions Override
+ * Plugin URI: https://github.com/ryersonlibrary/network-username-restrictions-override
+ * Description: Override some of the built-in restrictions in WordPress network usernames. Similar to the <a href="http://wordpress.org/extend/plugins/wpmu-blog-name-restrictions-override/">Blog Name Restrictions Override</a> plugin. Legacy plugin support for the Ryerson University Library & Archives website.
+ * Author: Ryerson University Library, Daniel Westermann-Clark
+ * Author URI: https://github.com/ryersonlibrary/
+ * GitHub Plugin URI: https://github.com/ryersonlibrary/network-username-restrictions-override
+ * Version: 1.3
+ */
 
 class NetworkUsernameRestrictionsOverridePlugin {
 	var $db_version = 2;
