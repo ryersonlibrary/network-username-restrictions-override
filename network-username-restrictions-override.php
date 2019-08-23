@@ -23,7 +23,7 @@ class NetworkUsernameRestrictionsOverridePlugin {
 		'min_length' => 4,
 	);
 
-	function NetworkUsernameRestrictionsOverridePlugin() {
+	function __construct() {
 		add_action('init', array($this, 'init'));
 	}
 
