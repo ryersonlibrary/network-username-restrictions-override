@@ -6,7 +6,7 @@
  * Author: Ryerson University Library, Daniel Westermann-Clark
  * Author URI: https://github.com/ryersonlibrary/
  * GitHub Plugin URI: https://github.com/ryersonlibrary/network-username-restrictions-override
- * Version: 1.3
+ * Version: 1.3.1
  */
 
 class NetworkUsernameRestrictionsOverridePlugin {
@@ -64,7 +64,7 @@ class NetworkUsernameRestrictionsOverridePlugin {
 
 			if ($code == 'user_name') {
 				foreach ($messages as $message) {
-					if ($message == __('Only lowercase letters (a-z) and numbers are allowed.')) {
+					if ($message == __('Usernames can only contain lowercase letters (a-z) and numbers.')) {
 						// Check if we allow email addresses; otherwise, check against character overrides
 
 						if (is_email($username)) {
@@ -217,7 +217,7 @@ class NetworkUsernameRestrictionsOverridePlugin {
 
 	function update_options() {
 		$submitted = $_POST['network_username_restrictions_override_options'];
-
+		
 		$flags = array(
 			'allow_email_addresses',
 			'allow_numeric',
@@ -228,7 +228,9 @@ class NetworkUsernameRestrictionsOverridePlugin {
 		);
 
 		foreach ($flags as $flag) {
-			$this->options[$flag] = (bool) $submitted[$flag];
+			if ( array_key_exists($flag, $submitted) ) {
+				$this->options[$flag] = (bool) $submitted[$flag];
+			}
 		}
 
 		$this->options['min_length'] = (int) $submitted['min_length'];
